@@ -50,7 +50,7 @@ Number.isFinite(true); // false
 
 注意，如果参数类型不是数值，`Number.isFinite`一律返回`false`。
 
-`Number.isNaN()`用来检查一个值是否为`NaN`。
+`Number.isNaN()`用来检查一个值是否为`NaN`。【重点】
 
 ```javascript
 Number.isNaN(NaN) // true
@@ -64,7 +64,7 @@ Number.isNaN('true' / 'true') // true
 
 如果参数类型不是`NaN`，`Number.isNaN`一律返回`false`。
 
-它们与传统的全局方法`isFinite()`和`isNaN()`的区别在于，传统方法先调用`Number()`将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，`Number.isFinite()`对于非数值一律返回`false`, `Number.isNaN()`只有对于`NaN`才返回`true`，非`NaN`一律返回`false`。
+它们与传统的全局方法`isFinite()`和`isNaN()`的区别在于，传统方法先调用`Number()`将非数值的值转为数值，再进行判断，而这两个新方法只对数值有效，`Number.isFinite()`对于非数值一律返回`false`, `Number.isNaN()`只有对于`NaN`才返回`true`，非`NaN`一律返回`false`。【重点】
 
 ```javascript
 isFinite(25) // true
@@ -81,7 +81,7 @@ Number.isNaN(1) // false
 
 ## Number.parseInt(), Number.parseFloat()
 
-ES6 将全局方法`parseInt()`和`parseFloat()`，移植到`Number`对象上面，行为完全保持不变。
+ES6 将全局方法`parseInt()`和`parseFloat()`，移植到`Number`对象上面，行为完全保持不变。【重点】
 
 ```javascript
 // ES5的写法
@@ -109,14 +109,14 @@ Number.isInteger(25) // true
 Number.isInteger(25.1) // false
 ```
 
-JavaScript 内部，整数和浮点数采用的是同样的储存方法，所以 25  和 25.0 被视为同一个值。
+JavaScript 内部，整数和浮点数采用的是同样的储存方法，所以 25  和 25.0 被视为同一个值。【重点】
 
 ```javascript
 Number.isInteger(25) // true
 Number.isInteger(25.0) // true
 ```
 
-如果参数不是数值，`Number.isInteger`返回`false`。
+如果参数不是数值，`Number.isInteger`返回`false`。【重点】
 
 ```javascript
 Number.isInteger() // false
@@ -142,7 +142,7 @@ Number.isInteger(5E-325) // true
 
 上面代码中，`5E-325`由于值太小，会被自动转为0，因此返回`true`。
 
-总之，如果对数据精度的要求较高，不建议使用`Number.isInteger()`判断一个数值是否为整数。
+总之，如果对数据精度的要求较高，不建议使用`Number.isInteger()`判断一个数值是否为整数。【重点】
 
 ## Number.EPSILON
 
@@ -314,7 +314,7 @@ ES6 在 Math 对象上新增了 17 个与数学相关的方法。所有这些方
 
 ### Math.trunc()
 
-`Math.trunc`方法用于去除一个数的小数部分，返回整数部分。
+`Math.trunc`方法用于去除一个数的小数部分，返回整数部分。【重点】
 
 ```javascript
 Math.trunc(4.1) // 4
@@ -324,7 +324,7 @@ Math.trunc(-4.9) // -4
 Math.trunc(-0.1234) // -0
 ```
 
-对于非数值，`Math.trunc`内部使用`Number`方法将其先转为数值。
+对于非数值，`Math.trunc`内部使用`Number`方法将其先转为数值。【重点】
 
 ```javascript
 Math.trunc('123.456') // 123
@@ -333,7 +333,7 @@ Math.trunc(false) // 0
 Math.trunc(null) // 0
 ```
 
-对于空值和无法截取整数的值，返回`NaN`。
+对于空值和无法截取整数的值，返回`NaN`。【重点】
 
 ```javascript
 Math.trunc(NaN);      // NaN
@@ -657,14 +657,14 @@ ES6 新增了 6 个双曲函数方法。
 
 ## 指数运算符
 
-ES2016 新增了一个指数运算符（`**`）。
+ES2016 新增了一个指数运算符（`**`）。【重点】
 
 ```javascript
 2 ** 2 // 4
 2 ** 3 // 8
 ```
 
-这个运算符的一个特点是右结合，而不是常见的左结合。多个指数运算符连用时，是从最右边开始计算的。
+这个运算符的一个特点是右结合，而不是常见的左结合。多个指数运算符连用时，是从最右边开始计算的。【重点】
 
 ```javascript
 // 相当于 2 ** (3 ** 2)
@@ -674,7 +674,7 @@ ES2016 新增了一个指数运算符（`**`）。
 
 上面代码中，首先计算的是第二个指数运算符，而不是第一个。
 
-指数运算符可以与等号结合，形成一个新的赋值运算符（`**=`）。
+指数运算符可以与等号结合，形成一个新的赋值运算符（`**=`）。【重点】
 
 ```javascript
 let a = 1.5;
@@ -686,7 +686,7 @@ b **= 3;
 // 等同于 b = b * b * b;
 ```
 
-注意，V8 引擎的指数运算符与`Math.pow`的实现不相同，对于特别大的运算结果，两者会有细微的差异。
+注意，V8 引擎的指数运算符与`Math.pow`的实现不相同，对于特别大的运算结果，两者会有细微的差异。【重点】
 
 ```javascript
 Math.pow(99, 99)

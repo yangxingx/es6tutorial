@@ -139,7 +139,7 @@ String.fromCodePoint(0x78, 0x1f680, 0x79) === 'x\uD83D\uDE80y'
 
 ## 字符串的遍历器接口
 
-ES6 为字符串添加了遍历器接口（详见《Iterator》一章），使得字符串可以被`for...of`循环遍历。
+ES6 为字符串添加了遍历器接口（详见《Iterator》一章），使得字符串可以被`for...of`循环遍历。【重点】
 
 ```javascript
 for (let codePoint of 'foo') {
@@ -150,7 +150,7 @@ for (let codePoint of 'foo') {
 // "o"
 ```
 
-除了遍历字符串，这个遍历器最大的优点是可以识别大于`0xFFFF`的码点，传统的`for`循环无法识别这样的码点。
+除了遍历字符串，这个遍历器最大的优点是可以识别大于`0xFFFF`的码点，传统的`for`循环无法识别这样的码点。【重点】
 
 ```javascript
 let text = String.fromCodePoint(0x20BB7);
@@ -209,7 +209,7 @@ ES6 提供字符串实例的`normalize()`方法，用来将字符的不同表示
 
 ## includes(), startsWith(), endsWith()
 
-传统上，JavaScript 只有`indexOf`方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6 又提供了三种新方法。
+传统上，JavaScript 只有`indexOf`方法，可以用来确定一个字符串是否包含在另一个字符串中。ES6 又提供了三种新方法。【重点】
 
 - **includes()**：返回布尔值，表示是否找到了参数字符串。
 - **startsWith()**：返回布尔值，表示参数字符串是否在原字符串的头部。
@@ -237,7 +237,7 @@ s.includes('Hello', 6) // false
 
 ## repeat()
 
-`repeat`方法返回一个新字符串，表示将原字符串重复`n`次。
+`repeat`方法返回一个新字符串，表示将原字符串重复`n`次。【重点】
 
 ```javascript
 'x'.repeat(3) // "xxx"
@@ -281,7 +281,7 @@ s.includes('Hello', 6) // false
 
 ## padStart()，padEnd()
 
-ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。`padStart()`用于头部补全，`padEnd()`用于尾部补全。
+ES2017 引入了字符串补全长度的功能。如果某个字符串不够指定长度，会在头部或尾部补全。`padStart()`用于头部补全，`padEnd()`用于尾部补全。【重点】
 
 ```javascript
 'x'.padStart(5, 'ab') // 'ababx'
@@ -314,7 +314,7 @@ ES2017 引入了字符串补全长度的功能。如果某个字符串不够指�
 'x'.padEnd(4) // 'x   '
 ```
 
-`padStart()`的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串。
+`padStart()`的常见用途是为数值补全指定位数。下面代码生成 10 位的数值字符串。【重点】
 
 ```javascript
 '1'.padStart(10, '0') // "0000000001"
@@ -322,7 +322,7 @@ ES2017 引入了字符串补全长度的功能。如果某个字符串不够指�
 '123456'.padStart(10, '0') // "0000123456"
 ```
 
-另一个用途是提示字符串格式。
+另一个用途是提示字符串格式。【重点】
 
 ```javascript
 '12'.padStart(10, 'YYYY-MM-DD') // "YYYY-MM-12"
@@ -356,7 +356,7 @@ $('#result').append(`
 `);
 ```
 
-模板字符串（template string）是增强版的字符串，用反引号（&#96;）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。
+模板字符串（template string）是增强版的字符串，用反引号（&#96;）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。【重点】
 
 ```javascript
 // 普通字符串
@@ -402,7 +402,7 @@ $('#list').html(`
 `.trim());
 ```
 
-模板字符串中嵌入变量，需要将变量名写在`${}`之中。
+模板字符串中嵌入变量，需要将变量名写在`${}`之中。【重点】
 
 ```javascript
 function authorize(user, action) {
@@ -419,7 +419,7 @@ function authorize(user, action) {
 }
 ```
 
-大括号内部可以放入任意的 JavaScript 表达式，可以进行运算，以及引用对象属性。
+大括号内部可以放入任意的 JavaScript 表达式，可以进行运算，以及引用对象属性。【重点】
 
 ```javascript
 let x = 1;
